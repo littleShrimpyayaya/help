@@ -187,18 +187,67 @@ class CarService:
             })
 
     def _init_functions(self):
-        self.items.append({ 'category': self.function,  'name': 'init', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_Init', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
             { 'name': None, 'type': None, 'description': None, },
-            { 'name': 'msg', 'type': self.uint8, 'description': 'This is for message', },
-            { 'name': None, 'type': None, 'description': None, },
-            { 'name': 'data_len', 'type': self.uint16, 'description': None, },
             ],
             'implementation': self._init_function_implementation(),
             'declaration': None,
             'scope': None,
             'description': 'Initialize Function',
             'declaration_file': self.manager_file_h,
-            'implementation_file': self.manager_file_c, 
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_Finalize', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Finalize Function',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_Receive_Message', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
+            { 'name': 'msg_id', 'type': self.uint32, 'description': 'HiSip ID', },
+            { 'name': 'data', 'type': self.uint8p, 'description': 'The pointer of data', },
+            { 'name': 'data_len', 'type': self.uint16, 'description': 'The length of data', },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Receive message function',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'Local_Receive_Message', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
+            { 'name': 'msg', 'type': 'Message_T*', 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': self.local_inline,
+            'description': 'Local receive function',
+            'declaration_file': None,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'Local_Android_Starup_Str', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': self.local_inline,
+            'description': 'Local android str starup function',
+            'declaration_file': None,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'Local_Android_Starup_cool', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': self.local_inline,
+            'description': 'Local android cool starup function',
+            'declaration_file': None,
+            'implementation_file': self.manager_file_c,
             })
         self.items.append({ 'category': self.function,  'name': 'Local_Reset_Factory', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
             { 'name': None, 'type': None, 'description': None, },
@@ -207,8 +256,118 @@ class CarService:
             'declaration': None,
             'scope': self.local_inline,
             'description': 'Local reset factory function',
+            'declaration_file': None,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'Local_Reset_Default', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': self.local_inline,
+            'description': 'Local reset default function',
+            'declaration_file': None,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_5ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 5ms',
             'declaration_file': self.manager_file_h,
-            'implementation_file': self.manager_file_c, 
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_10ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 10ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_20ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 20ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_40ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 40ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_50ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 50ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_80ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 80ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_100ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 100ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_160ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 160ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_200ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 200ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
+            })
+        self.items.append({ 'category': self.function,  'name': 'SettingService_Manager_runnable_320ms', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
+            { 'name': None, 'type': None, 'description': None, },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Runnable of 320ms',
+            'declaration_file': self.manager_file_h,
+            'implementation_file': self.manager_file_c,
             })
 
     def _init_function_pointers(self):
@@ -220,7 +379,7 @@ class CarService:
             'scope': None,
             'description': 'This is callback of rte sending successs.',
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceFunction_T', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
             { 'name': None, 'type': self.voidp, 'description': None, },
@@ -230,7 +389,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceCommonFunction_T', 'prefix': None, 'suffix': None, 'return_type': self.uint8, 'arguments': [
             { 'name': None, 'type': None, 'description': None, },
@@ -240,7 +399,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceStartupFunction_T', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
             { 'name': None, 'type': 'Startup_Method_T', 'description': None, },
@@ -250,7 +409,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceResetFunction_T', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
             { 'name': None, 'type': 'Reset_Method_T', 'description': None, },
@@ -260,7 +419,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceReceiveFunction_T', 'prefix': None, 'suffix': None, 'return_type': 'Result_T', 'arguments': [
             { 'name': None, 'type': 'Message_T*', 'description': None, },
@@ -270,7 +429,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.function_pointer_type,  'name': 'SettingServiceRunnableFunction_T', 'prefix': None, 'suffix': None, 'return_type': self.void, 'arguments': [
             { 'name': None, 'type': self.void, 'description': None, },
@@ -280,7 +439,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
 
     def _init_structs(self):
@@ -296,7 +455,7 @@ class CarService:
             'scope': None,
             'description': 'Struct of Message_T',
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.struct,    'name': 'SettingServiceInfo_T', 'prefix': None, 'suffix': None, 'members': [
             { 'name': 'signal_id', 'type': self.uint32, 'description': None, },
@@ -332,7 +491,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.struct,    'name': 'SettingServiceObject_T', 'prefix': None, 'suffix': None, 'members': [
             { 'name': 'data', 'type': 'SettingServiceInfo_T', 'description': None, },
@@ -344,7 +503,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.struct,    'name': 'Message_Queue_T', 'prefix': None, 'suffix': None, 'members': [
             { 'name': 'inIndex', 'type': self.uint32, 'description': None, },
@@ -358,7 +517,7 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
         self.items.append({ 'category': self.struct,    'name': 'SettingServiceComponent_T', 'prefix': None, 'suffix': None, 'members': [
             { 'name': 'init', 'type': 'SettingServiceCommonFunction_T', 'description': None, },
@@ -382,24 +541,230 @@ class CarService:
             'scope': None,
             'description': None,
             'declaration_file': self.types_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
             })
 
     def _init_enums(self):
         self.items.append({ 'category': self.enum,      'name': 'Result_T', 'prefix': None, 'suffix': None, 'members': [
             { 'name': 'RES_OK', 'type': None, 'description': None, 'value': None },
             { 'name': 'RES_NOT_OK', 'type': None, 'description': None, 'value': None },
-            { 'name': None, 'type': None, 'description': 'middle', },
+            { 'name': None, 'type': None, 'description': None, },
             { 'name': 'RES_INVALID', 'type': None, 'description': None, 'value': None },
-            { 'name': 'RESULT_T_END', 'type': None, 'description': None, 'value': self.ffffffff },
-            { 'name': None, 'type': None, 'description': 'END', },
             ],
             'implementation': None,
             'declaration': None,
             'scope': None,
             'description': 'Enum of Result_T',
             'declaration_file': self.enums_file_h,
-            'implementation_file': None, 
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'SettingServiceUpdate_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'UPDATE_NONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_POWERON', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_INIT', 'type': None, 'description': 'Initialize function Invoked', 'value': None },
+            { 'name': 'UPDATE_FROM_NVM', 'type': None, 'description': 'When read data from NVM', 'value': None },
+            { 'name': 'UPDATE_FROM_ANDROID', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_SEND_TIMES', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_QNX', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_BUS', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_FROM_TIMEOUT', 'type': None, 'description': None, 'value': None },
+            { 'name': 'UPDATE_MAX', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of SettingServiceUpdate_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Function_Invoked_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'RX_RECEIVE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'RX_POP_QUEUE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'INVOKE_NONE', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Function_Invoked_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'SettingServiceDirection_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'DIRECTION_TX', 'type': None, 'description': None, 'value': None },
+            { 'name': 'DIRECTION_RX', 'type': None, 'description': None, 'value': None },
+            { 'name': 'DIRECTION_TXRX', 'type': None, 'description': None, 'value': None },
+            { 'name': 'DIRECTION_NONE', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of SettingServiceDirection_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Android_State_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'ANDROID_POWEROFF', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_PREPARE_POWERON', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_POWERONING', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_READY', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_PREPARE_POWEROFF', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_POWEROFFING', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_POWEROFF_DONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_INVALID', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Android_State_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Startup_Method_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'STARTUP_NONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'VIP_POWER_ON', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_STR', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ANDROID_COOL_STARTUP', 'type': None, 'description': None, 'value': None },
+            { 'name': 'STARTUP_METHOD_MAX', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Startup_Method_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Reset_Method_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'RESET_NONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'RESET_FACTORY', 'type': None, 'description': None, 'value': None },
+            { 'name': 'RESET_DEFAULT', 'type': None, 'description': None, 'value': None },
+            { 'name': 'RESET_METHOD_MAX', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Reset_Method_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Pop_Queue_Method_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'ITEM_ONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ITEM_ALL', 'type': None, 'description': None, 'value': None },
+            { 'name': 'ITEM_NONE', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Pop_Queue_Method_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Log_Level_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'LOG_LEVEL_NONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_INFO', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_WARN', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_DEBUG', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_VERBOSE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_FAULT', 'type': None, 'description': None, 'value': None },
+            { 'name': 'LOG_LEVEL_MAX', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Log_Level_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Send_Time_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'SEND_TIMES_0', 'type': None, 'description': None, 'value': '0' },
+            { 'name': 'SEND_TIMES_1', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_2', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_3', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_4', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_5', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_6', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_7', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_8', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_9', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_10', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SEND_TIMES_ALWAYS', 'type': None, 'description': None, 'value': self.ffffff },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Log_Level_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Sending_Status_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'SENDING_NONE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_PREPARE', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_PROGRESS', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_SUCCESS', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_ERROR', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_FAILED', 'type': None, 'description': None, 'value': None },
+            { 'name': 'SENDING_MAX', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Sending_Status_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'End_Value_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'END_VALUE_0', 'type': None, 'description': None, 'value': '0' },
+            { 'name': 'END_VALUE_1', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_2', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_3', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_4', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_5', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_6', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_7', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_8', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_9', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_10', 'type': None, 'description': None, 'value': None },
+            { 'name': 'END_VALUE_NONE', 'type': None, 'description': None, 'value': self.ffffff },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of End_Value_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'Nvm_Opreate_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'NVM_READ_OK', 'type': None, 'description': None, 'value': None },
+            { 'name': 'NVM_READ_NOT_OK', 'type': None, 'description': None, 'value': None },
+            { 'name': 'NVM_WRITE_OK', 'type': None, 'description': None, 'value': None },
+            { 'name': 'NVM_WRITE_NOT_OK', 'type': None, 'description': None, 'value': None },
+            { 'name': 'NVM_OPREATE_NONE', 'type': None, 'description': None, 'value': None },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of Nvm_Opreate_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
+            })
+        self.items.append({ 'category': self.enum,      'name': 'SettingServiceNvmInfo_T', 'prefix': None, 'suffix': None, 'members': [
+            { 'name': 'NVM_DATA_INDEX_0', 'type': None, 'description': None, 'value': '0' },
+            { 'name': 'NVM_DATA_INDEX_0_LENGTH', 'type': None, 'description': None, 'value': '1' },
+            { 'name': 'NVM_DATA_INDEX_1', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_0 + NVM_DATA_INDEX_0_LENGTH' },
+            { 'name': 'NVM_DATA_INDEX_1_LENGTH', 'type': None, 'description': None, 'value': '1' },
+            { 'name': 'NVM_DATA_INDEX_2', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_1 + NVM_DATA_INDEX_1_LENGTH' },
+            { 'name': 'NVM_DATA_INDEX_2_LENGTH', 'type': None, 'description': None, 'value': '1' },
+            { 'name': 'NVM_DATA_INDEX_3', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_2 + NVM_DATA_INDEX_2_LENGTH' },
+            { 'name': 'NVM_DATA_INDEX_3_LENGTH', 'type': None, 'description': None, 'value': '1' },
+            { 'name': 'NVM_DATA_INDEX_LAST', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_3' },
+            { 'name': 'NVM_DATA_INDEX_LAST_LENGTH', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_3_LENGTH' },
+            { 'name': 'NVM_DATA_INDEX_MAX', 'type': None, 'description': None, 'value': 'NVM_DATA_INDEX_LAST + NVM_DATA_INDEX_LAST_LENGTH' },
+            ],
+            'implementation': None,
+            'declaration': None,
+            'scope': None,
+            'description': 'Enum of SettingServiceNvmInfo_T',
+            'declaration_file': self.enums_file_h,
+            'implementation_file': None,
             })
 
     def _init_includes(self):
@@ -418,6 +783,16 @@ class CarService:
                     'Appl_Cbk.h',
                     ],
                 }
+        self.items_includes[self.manager_file_c] = {
+                'system_includes': [
+                    ],
+                'includes': [
+                    'settingservice_types_test.h',
+                    'settingservice_manager_test.h',
+                    'settingservice_vddm_pcmu.h',
+                    ],
+                }
+
 
     def _get_includes_by_filename(self, filename):
         includes_string = None
@@ -479,7 +854,7 @@ class CarService:
 #define    U9    (9u)
 #define    U10    (10u)
 #define    U32    (32u)
-        """
+"""
 
         return declaration
 
@@ -572,6 +947,13 @@ class CarService:
             return True
         return False
 
+    def _has_non_void_return_type(self, return_type):
+        has_return_type = False
+        if return_type and len(return_type.strip()) > 0 and return_type.strip() != self.void:
+            has_return_type = True
+
+        return has_return_type
+
     def _function_validated_without_arguments(self, return_type, name, args):
         if return_type and name and args and len(args.strip()) > 0:
             return False
@@ -595,8 +977,8 @@ class CarService:
                 declaration = f'{return_type} {name}({self.void})'
         return declaration
 
-    def _function_declare(self, return_type, name, args, item):
-        declaration = self._function_declare_string(return_type, name, args, item)
+    def _function_declare(self, return_type, function_name, args, item):
+        declaration = self._function_declare_string(return_type, function_name, args, item)
         if declaration:
             declaration += ';' + self.crlf
         return declaration
@@ -613,69 +995,77 @@ class CarService:
 
         return function_string
 
-    def _function_implementation_string(self, return_type, name, args, item):
+    def _function_implementation_string(self, return_type, function_name, args, item):
         local_print(sys._getframe().f_code.co_name)
         implementation = None
-        declaration = self._function_declare_string(return_type, name, args, item)
+        declaration = self._function_declare_string(return_type, function_name, args, item)
         item_implementation  = self._get_item_value_by_key('implementation', item)
         if declaration:
             implementation = f'{declaration}'
             implementation += self.crlf + '{'
-            if self._function_validated_with_arguments(return_type, name, args):
+            if self._function_validated_with_arguments(return_type, function_name, args):
                 if item_implementation:
                     implementation += item_implementation
                 else:
-                    implementation += f'{self.crlf}{self.indent}{return_type} ret = 0u;'
-                    implementation += self.crlf
-                    implementation += f'{self.crlf}{self.indent}return ret;{self.crlf}'
-            elif self._function_validated_without_arguments(return_type, name, args):
+                    if self._has_non_void_return_type(return_type):
+                        implementation += f'{self.crlf}{self.indent}{return_type} ret = 0u;'
+                        implementation += self.crlf
+                        implementation += f'{self.crlf}{self.indent}return ret;{self.crlf}'
+                    else:
+                        implementation += self.crlf
+            elif self._function_validated_without_arguments(return_type, function_name, args):
                 if item_implementation:
                     implementation += item_implementation
                 else:
-                    implementation += self.crlf
+                    if self._has_non_void_return_type(return_type):
+                        implementation += f'{self.crlf}{self.indent}{return_type} ret = 0u;'
+                        implementation += self.crlf
+                        implementation += f'{self.crlf}{self.indent}return ret;{self.crlf}'
+                    else:
+                        implementation += self.crlf
             else:
                 return None
             implementation += '}' + self.crlf
         return implementation
 
-    def _function_implementation(self, return_type, name, args, item):
-        implementation = self._function_implementation_string(return_type, name, args, item)
+    def _function_implementation(self, return_type, function_name, args, item):
+        implementation = self._function_implementation_string(return_type, function_name, args, item)
         if implementation:
             implementation += self.crlf
         return implementation
 
-    def _function_pointers_declare_string(self, return_type, name, args, item):
+    def _function_pointers_declare_string(self, return_type, function_name, args, item):
         local_print(sys._getframe().f_code.co_name)
         declaration = None
         item_scope      = self._get_item_value_by_key('scope', item)
-        if self._function_validated_with_arguments(return_type, name, args):
-            declaration = f'typedef {return_type} (*{name})({args})'
-        elif self._function_validated_without_arguments(return_type, name, args): 
-            declaration = f'typedef {return_type} (*{name})({self.void})'
+        if self._function_validated_with_arguments(return_type, function_name, args):
+            declaration = f'typedef {return_type} (*{function_name})({args})'
+        elif self._function_validated_without_arguments(return_type, function_name, args): 
+            declaration = f'typedef {return_type} (*{function_name})({self.void})'
         return declaration
 
-    def _function_pointers_declare(self, return_type, name, args, item):
-        declaration = self._function_pointers_declare_string(return_type, name, args, item)
+    def _function_pointers_declare(self, return_type, function_name, args, item):
+        declaration = self._function_pointers_declare_string(return_type, function_name, args, item)
         if declaration:
             declaration += ';' + self.crlf
         return declaration
 
-    def _function_pointers_implementation_string(self, return_type, name, args, item):
+    def _function_pointers_implementation_string(self, return_type, function_name, args, item):
         local_print(sys._getframe().f_code.co_name)
         implementation = None
-        declaration = self._function_declare_string(return_type, name, args, item)
+        declaration = self._function_declare_string(return_type, function_name, args, item)
         item_implementation  = self._get_item_value_by_key('implementation', item)
         if declaration:
             implementation = f'{declaration}'
             implementation += self.crlf + '{'
-            if self._function_validated_with_arguments(return_type, name, args):
+            if self._function_validated_with_arguments(return_type, function_name, args):
                 if item_implementation:
                     implementation += item_implementation
                 else:
                     implementation += f'{self.crlf}{self.indent}{return_type} ret = 0u;'
                     implementation += self.crlf
                     implementation += f'{self.crlf}{self.indent}return ret;{self.crlf}'
-            elif self._function_validated_without_arguments(return_type, name, args):
+            elif self._function_validated_without_arguments(return_type, function_name, args):
                 if item_implementation:
                     implementation += item_implementation
                 else:
@@ -686,8 +1076,8 @@ class CarService:
         implementation = None
         return implementation
 
-    def _function_pointers_implementation(self, return_type, name, args, item):
-        implementation = self._function_pointers_implementation_string(return_type, name, args, item)
+    def _function_pointers_implementation(self, return_type, function_name, args, item):
+        implementation = self._function_pointers_implementation_string(return_type, function_name, args, item)
         if implementation:
             implementation += self.crlf
         return implementation
